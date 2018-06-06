@@ -1,0 +1,28 @@
+{
+  "name": "ts-basics",
+  "version": "1.0.0",
+  "description": "Our node exploration",
+  "main": "ex01.js",
+  "scripts": {
+    "compile": "tsc ex04.ts",
+    "build": "webpack --watch",
+    "start": "webpack-dev-server --port 3000 --content-base dest",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kayartaya-vinod"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Vinod <vinod@vinod.co>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "ts-loader": "~3.2.0",
+    "typescript": "^2.9.1",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.2"
+  }
+}
