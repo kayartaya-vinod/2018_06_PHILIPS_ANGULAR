@@ -36,11 +36,13 @@ export class ContactDetailsComponent implements OnInit {
 
   deleteContact() {
     if (confirm('Are you sure to delete this?')) {
-      alert('Delete not done yet!');
+      this.service.deleteContact(this.contact.id)
+        .subscribe(() => this.router.navigate(['/']));
     }
   }
 
-  isAdmin() {
-    return true;
+  storeContact() {
+    // adding a new property called "editing_contact" in service
+    this.service['editing_contact'] = this.contact;
   }
 }

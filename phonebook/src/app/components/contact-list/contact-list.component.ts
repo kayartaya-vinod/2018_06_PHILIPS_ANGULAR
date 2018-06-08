@@ -10,13 +10,24 @@ import { Contact } from '../../model/contact';
 export class ContactListComponent implements OnInit {
 
   contacts: Array<Contact> = [];
+  token: string;
 
   constructor(private servce: PhonebookService) { }
 
-  ngOnInit() {
+  initContacts() {
     this.servce.getAllContacts()
       .subscribe(data => this.contacts = data);
   }
+  ngOnInit() {
+    this.initContacts();
 
+    // this.servce.on('deleted', () => this.initContacts());
+  }
+
+  deleteContact(id) {
+    if (confirm('Are you sure to delete this contact?')) {
+      this.servce.deleteContact(id).subscribe();
+    }
+  }
 
 }

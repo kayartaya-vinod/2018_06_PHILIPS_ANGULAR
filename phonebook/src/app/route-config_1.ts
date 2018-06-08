@@ -12,20 +12,24 @@ export const routeConfig:Routes = [
         redirectTo: 'contact-list'
     },
     {
-        path: 'contact-list',
-        component: ContactListComponent
-    },
-    {
-        path: 'contact-details/:id',
-        component: ContactDetailsComponent
-    },
-    {
-        path: 'edit-contact/:id',
-        component: AddEditContactComponent
-    },
-    {
-        path: 'add-contact',
-        component: AddEditContactComponent
+        path: 'contacts',
+        component: ContactListComponent,
+        children: [
+            {
+                path: ':id',
+                component: ContactDetailsComponent,
+                children: [
+                    {
+                        path: 'edit',
+                        component: AddEditContactComponent
+                    }
+                ]
+            },
+            {
+                path: 'add',
+                component: AddEditContactComponent
+            },
+        ]
     },
     {
         path: '**',

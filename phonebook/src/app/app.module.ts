@@ -11,8 +11,16 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
 import { RouterModule } from '@angular/router';
 import { routeConfig } from './route-config';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
+import { AddEditContactComponent } from './components/add-edit-contact/add-edit-contact.component';
+
+const appRoutingProviders: any[] = [
+
+];
 
 @NgModule({
+
   declarations: [
     AppComponent,
     AppHeaderComponent,
@@ -20,15 +28,19 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     FullnamePipe,
     AgePipe,
     ContactListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FilterPipe,
+    AddEditContactComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routeConfig, { useHash: true })
   ],
   providers: [
-    PhonebookService
+    PhonebookService,
+    appRoutingProviders
   ],
   bootstrap: [AppComponent]
 })

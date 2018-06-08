@@ -69,9 +69,14 @@
           </div>
         </div>
         <div>
-          <button class="btn btn-primary btn-block">Edit</button>
+
+
+          <button [routerLink]="['/edit-contact', contact.id]" 
+            (click)="storeContact()"
+            class="btn btn-primary btn-block">Edit</button>
+
+
           <button (click)="deleteContact()" 
-            *ngIf="isAdmin()"
             class="btn btn-danger btn-block">Delete</button>
         </div>
       </div>

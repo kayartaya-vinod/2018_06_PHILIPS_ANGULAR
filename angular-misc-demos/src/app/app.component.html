@@ -1,0 +1,26 @@
+<h1 appBox>Angular Miscellaneous Demos</h1>
+<hr>
+
+<button appBox color="green" (click)="toggle()">Toggle</button>
+
+<h2 [hidden]="flag">Example of hidden</h2>
+<h2 *ngIf="!flag">Example of removed</h2>
+<button [disabled]="flag">Example of disabled</button>
+
+<div>
+  <p>
+    <label>Enter title: </label>
+    <input type="text" name="title" [(ngModel)]="tfTitle">
+  </p>
+  <p>
+      <label>Enter author name: </label>
+      <input type="text" name="author" [(ngModel)]="tfAuthor">
+    </p>
+    
+</div>
+
+<app-child borderColor="red" [title]="tfTitle" [author]="tfAuthor"  ></app-child>
+<app-child borderColor="blue" title="Hello, World!" author="Kumar"  ></app-child>
+<app-child title="Hello, World!" ></app-child>
+<app-child author="Kumar"  ></app-child>
+<app-child  ></app-child>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PhonebookService } from '../../service/phonebook.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
+  count: number;
+
+  constructor(private service: PhonebookService) { }
+
+  initCount(): void {
+    this.service.count().subscribe(data => this.count = data.count);
+  }
 
   ngOnInit() {
+    this.initCount();
+    
+    // this.service.on('deleted', () => this.initCount())
+      // .on('added', () => this.initCount());
+
   }
 
 }
