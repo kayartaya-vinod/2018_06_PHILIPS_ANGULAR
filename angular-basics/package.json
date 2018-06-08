@@ -1,0 +1,48 @@
+{
+  "name": "angular-basics",
+  "version": "1.0.0",
+  "description": "Fundamentals of Angular",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --watch",
+    "start": "webpack-dev-server --content-base dist --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kayartaya-vinod"
+  },
+  "keywords": [
+    "training",
+    "angular",
+    "typescript"
+  ],
+  "author": "Vinod <vinod@vinod>",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/animations": "^4.2.4",
+    "@angular/common": "^4.2.4",
+    "@angular/compiler": "^4.2.4",
+    "@angular/core": "^4.2.4",
+    "@angular/forms": "^4.2.4",
+    "@angular/http": "^4.2.4",
+    "@angular/platform-browser": "^4.2.4",
+    "@angular/platform-browser-dynamic": "^4.2.4",
+    "@angular/router": "^4.2.4",
+    "@types/node": "^8.10.14",
+    "angular2-template-loader": "^0.6.2",
+    "core-js": "^2.5.6",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "jquery": "^3.3.1",
+    "rxjs": "^5.5.10",
+    "style-loader": "^0.21.0",
+    "ts-loader": "^2.3.7",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.2",
+    "zone.js": "^0.8.26"
+  }
+}

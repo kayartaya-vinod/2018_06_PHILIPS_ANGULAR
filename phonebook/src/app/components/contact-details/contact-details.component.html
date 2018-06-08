@@ -1,0 +1,82 @@
+<div *ngIf="!contact">
+  Loading...
+</div>
+
+<div *ngIf="contact" class="row">
+  <div class="col-sm">
+  </div>
+  <div class="col-sm">
+    <h3 class="text-center">{{ contact | fullname }}</h3>
+    <div class="row">
+      <div class="col-sm">
+        <img class="img img-thubmnail img-responsive" [src]="contact.picture">
+      </div>
+      <div class="col-sm">
+        <div class="row">
+          <div class="col">
+            <label>Email id</label>
+          </div>
+          <div class="col">
+            <label>{{contact.email}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Phone</label>
+          </div>
+          <div class="col">
+            <label>{{contact.phone}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Age</label>
+          </div>
+          <div class="col">
+            <label>{{contact.dob | age}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Address</label>
+          </div>
+          <div class="col">
+            <label>{{contact.address}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>City</label>
+          </div>
+          <div class="col">
+            <label>{{contact.city}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>State</label>
+          </div>
+          <div class="col">
+            <label>{{contact.state}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Country</label>
+          </div>
+          <div class="col">
+            <label>{{contact.country}}</label>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-block">Edit</button>
+          <button (click)="deleteContact()" 
+            *ngIf="isAdmin()"
+            class="btn btn-danger btn-block">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm">
+  </div>
+</div>
